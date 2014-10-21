@@ -1,0 +1,61 @@
+WWW-BetfairNG version 0.06
+==========================
+
+Betfair is an online betting exchange which allows registered users to
+interact with it using a JSON-based API. This module provides an
+interface to that service which handles the JSON exchange, taking and
+returning perl data structures (usually hashrefs). Although some
+checking of the existence of required parameter fields is done, and a
+listing of the BETFAIR DATA TYPES is provided in the perldoc , it
+requires a level of understanding of the Betfair API which is best
+gained from their own documentation, available from
+https://developer.betfair.com/
+                                                                                          
+To use this library, you will need a funded Betfair account. To use
+the non-interactive log in, you will also need an SSL certificate and
+key (in seperate files, rather than a single .pem file), and an
+application key. Details of how to create or obtain these, and how to
+register your certificate with Betfair are also available on the above
+website. An interactive log in method is available which does not
+require an SSL certificate, although Betfair strongly recommend that
+unattended bots use the non-interactive version.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+If you wish to test live betfair functions before installation, you
+will need your login details and optionally the paths to your SSL
+certificate and key files. Replace the 'make test' line above with:
+
+  BF_LIVE_TEST=1 make test
+
+As this requires keyboard input of your username and password, you
+should not use this option in an automated test environment. This will
+test all live functions, but will not place any bets or make any
+changes to your account.
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+  HTTP::Tiny
+  JSON::MaybeXS            
+  IO::Uncompress::Gunzip   
+
+To run the live test of betfair functions you will also need:
+
+  Term::ReadKey   
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2014 by Myrddin Wyllt
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. (See the file LICENSE for
+further details)
