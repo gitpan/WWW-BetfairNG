@@ -33,11 +33,11 @@
       "runtime" : {
          "requires" : {
             "HTTP::Tiny" : "0",
-            "JSON::MaybeXS" : "0"
+            "JSON::MaybeXS" : "0",
             "IO::Uncompress::Gunzip" : "0"	     
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.06"
+   "version" : "0.07"
 }
